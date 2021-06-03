@@ -1,7 +1,7 @@
 function OpenUserProfile(){
     var path = window.location.pathname;
     var page = path.split("/").pop();
-   if(page != "loginPage.html"){
+   if(page != "index.html"){
         document.getElementById("profileID").value = (localStorage.getItem("uName").replace("@gmail.com", ""));
         document.getElementById("profileDepartment").value = localStorage.getItem("Depart");
         document.getElementById("profilePosition").value = localStorage.getItem("uRole");

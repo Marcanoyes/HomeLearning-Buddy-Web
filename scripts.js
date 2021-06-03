@@ -422,7 +422,7 @@ function getUsers(role){
             if(dontlogout==1){
                 
             }else{
-                location.href = "loginPage.html";
+                location.href = "index.html";
             }
         }
     });
@@ -444,7 +444,7 @@ function Authenti(x){
             localStorage.setItem("CU",uid);
         // ...
         } else {
-            location.href = "loginPage.html";
+            location.href = "index.html";
         }
     });
 }
@@ -555,7 +555,7 @@ function loadDash(){
             
             
         } else {
-            location.href = "loginPage.html";
+            location.href = "index.html";
         }
     });
 }
@@ -677,7 +677,7 @@ function Logout(){
             localStorage.setItem("uName","");
             localStorage.setItem("uPass","");
             localStorage.setItem("uRole","");
-            location.href = "loginPage.html";
+            location.href = "index.html";
         }).catch((error) => {
             // An error happened.
         });
@@ -691,7 +691,7 @@ function Logout(){
 //            localStorage.setItem("uName","");
 //            localStorage.setItem("uPass","");
 //            localStorage.setItem("uRole","");
-//            location.href = "loginPage.html";
+//            location.href = "index.html";
 //        }).catch((error) => {
 //            // An error happened.
 //        });
@@ -1021,7 +1021,7 @@ function getSubjs(Filter){
            })
             
         } else {
-            location.href = "loginPage.html";
+            location.href = "index.html";
         }
         
     });
@@ -1329,7 +1329,7 @@ function getDataAnnouncements(){
             
             
         } else {
-            location.href = "loginPage.html";
+            location.href = "index.html";
         }
     });  
     
@@ -1598,7 +1598,7 @@ function getDataReminders(){
             
             
         } else {
-            location.href = "loginPage.html";
+            location.href = "index.html";
         }
     });  
     
@@ -2395,7 +2395,7 @@ function loadUserLogs(){
             })
             
         } else {
-            location.href = "loginPage.html";
+            location.href = "index.html";
         }
     });
 }
