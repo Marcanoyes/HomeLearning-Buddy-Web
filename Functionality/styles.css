@@ -1,0 +1,1318 @@
+html, body{
+    height:100vh;
+    width: 100%;
+    margin: 0!important;
+    padding: 0!important;
+    overflow: hidden;
+}
+
+/*LOGIN*/
+
+.bodyLogin{
+    height: 100%;
+    background-image: url(Icons/UPangMainBg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.center{
+    height:40vw;
+    width:70vw;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 2px 4px 1px #888888;
+}
+
+.loginCardImg{
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 50%;
+    border-right: inline 5% solid red;
+}
+
+.imgLogin{
+    height: 47%;
+    width: 65%;
+    margin: 6vw 0vw 0vw 0vw;
+}
+
+.loginAppName{
+    color: darkslategray;
+    font-family: sans-serif;
+    margin: 0;
+    width: 100%;
+    font-size: 4vw;
+    
+}
+
+.loginCard{
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 50%;
+}
+
+.loginCard::before{
+  content: "";
+  height: 86%;
+  display: block;
+  border-left: 1px solid #333;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.topText{
+    margin-top: 4vw;
+    color: darkslategray;
+    font-family:sans-serif;
+    font-size: 3.7vw;
+    margin-bottom: 0;
+    
+}
+
+.loginTxtLabel{
+    font-family: monospace;
+    font-size: 2.4vw;
+    float: left;
+    width: 80%;
+    text-align: left;
+    color: darkslategray;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2.5vw;
+}
+
+.loginTxtInput{
+    font-family: monospace;
+    font-size: 2.4vw;
+    float: left;
+    width: 80%;
+    margin-left: 8.33%;
+    margin-right: 8.33%;
+}
+.btnLogin{
+    float: left;
+    width: 82%;
+    font-family: monospace;
+    font-size: 2vw;
+    margin-left: 8.33%;
+    margin-right: 8.33%;
+    color: white;
+    background-color: green;
+    height: 4vw;
+    margin-top: 4.5vw;
+}
+
+.btnLogin :hover{
+    background-color: aqua!important;
+}
+
+
+
+/*=======DASHBOARD======*/
+
+.nav{
+    width: 6%;
+    height: 100vh;
+    position: fixed;
+    background-color: #494949;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+    margin-left: 6%;
+    width: 94%;
+    height: auto;
+    background-color: gainsboro;
+}
+
+/*=======DASH NAV ITEMS======*/
+.nav img{
+    max-height: 65%;
+    max-width: 65%;
+    padding: 0;
+}
+
+.nav .appIcon{
+    max-height: 100%;
+    max-width: 100%;
+    margin-bottom: 0.8em;
+    margin-top: 0.4vh;
+}
+
+.nav btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+    margin: 0;
+    padding: 0.3vh 0;
+    border-radius: 4px 0px 0px 14px;
+}
+
+
+
+.nav .logout{
+    visibility: hidden
+}
+
+.nav .selected{
+    color: dimgray;
+    background-color: gainsboro;
+}
+
+.nav btn:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.4);
+}
+
+#viewStaffAccs tr:hover{
+    cursor: pointer!important;
+    background-color: darkseagreen!important;
+}
+
+#viewStudentAccs tr:hover{
+    cursor: pointer!important;
+    background-color: darkseagreen!important;
+}
+
+
+.nav .selected:hover{
+    cursor: pointer;
+    background-color: gainsboro;
+}
+
+/*=======DASH CONTAINER CONTENT======*/
+.dashboardHead{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    height: auto;
+}
+
+.dashboardHead h1{
+    font-weight: normal;
+    width: auto;
+    max-width: 35%;
+}
+
+.notifANDaccount{
+    padding: 1% 0;;
+    max-height: 7vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: green;
+}
+.dropDown{
+    position: relative;
+    border-radius: 5px;
+    padding: 0 0.5em;
+    margin-right: 0.5%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.dropDown:hover{
+    opacity: 0.9;
+    background-color: gainsboro;
+}
+.notifANDaccount p{
+    width: auto;
+    text-align: end;
+    color: white;
+    margin: 0;
+    margin-right: 0.5%;
+    font-size: 1.7rem;
+}
+
+.dropdown-content {
+    right:0;
+    top:0;
+    display: none;
+    position: absolute;
+    z-index: 10;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropDown:hover .dropdown-content {display: block!important;}
+.dropDown p{
+    width: auto;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+.notifANDaccount img{
+    max-height: 5.5vh;
+    margin-right: 1%;
+}
+
+.notifBtn{
+    position: relative;
+    margin-right: 1em;
+    border-radius: 5px;
+}
+
+.notifBtn:hover{
+    opacity: 0.9;
+    background-color: gainsboro;
+}
+
+.badge{
+    background-color: red;
+    position: absolute;
+    top: -1px;
+    right: -5px;
+}
+
+.dashboardHead h1{
+    margin: 1vh 1%;
+    font-size:  3.8rem;
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 1px solid black;
+    color: black
+}
+
+.grid{
+    margin: 4vh 1%;
+    height: 80vh;
+    display: grid;
+    grid-column-gap: 0.4em;
+    grid-row-gap: 0.4em;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50% ;
+}
+
+.griddiv{
+    z-index: 0;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.3em;
+    margin: 0;
+    background-color: darkgreen;
+    color: white;
+    font-size: 4em;
+}
+
+.griddiv:hover {
+    background-color: forestgreen;
+    cursor: pointer;
+}
+
+.griddiv label{
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.griddiv label:hover{
+    cursor: pointer;
+}
+
+.tableandtitle{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.tblDashboard{
+    max-height:100%;
+    overflow-x: hidden;
+}
+.ImgNCount{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.tblImg{
+    width: 50%;
+}
+.tblCountText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 7rem;
+    position: relative;
+}
+
+.UIDTB{
+    width: 30vw;
+}
+.FNameTB{
+    width: 70%
+}
+.studentTBDashboard{
+    color: darkgreen;
+}
+
+
+.flexDash{
+    font-size: 1.6rem;
+    margin: 4vh 1%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.flexDash .sectionDiv{
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: darkgreen;
+    color: whitesmoke;
+    border-radius: 15px;
+    height: 10vh;
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.notextDashTeach{
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: indianred;
+    border: 4px solid indianred;
+}
+
+.sectionDiv:hover{
+    background-color: green;
+    cursor: pointer;
+}
+.count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+}
+
+.count img{
+    max-height: 6.8vh;
+}
+
+
+/*=======ACCOUNT/STAFF CONTAINER CONTENT======*/
+.accountContainer{
+    height: 87.8vh!important;
+}
+
+.userlogs{
+    height: 97vh!important;
+}
+
+table{
+    width: auto;
+    margin: 1% 1% 2% 1%!important;
+    border-collapse: collapse!important;
+    box-sizing: border-box!important;
+    border: 2px solid black!important;
+    height: 84%!important;
+    overflow-y: auto!important;
+    overflow-x: hidden!important;
+    display: block!important;
+}
+
+table th {
+    text-align: center;
+    position: sticky; 
+    top: 0;
+    color: whitesmoke;
+    background-color: black;
+    font-size:1.4rem;
+}
+
+tbody tr td{
+    padding: 5px 0;
+    font-size: 1.6rem;
+    text-align: center;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+table tr:nth-child(odd) {background-color: gainsboro;}
+table tr:nth-child(even) {background-color: whitesmoke;}
+
+.cONE{
+    width: 22vw
+}
+.cTWO{
+    width: 40%
+}
+.cTHREE{
+    width: 15%
+}
+.cFOUR{
+    width: 25%
+}
+
+#classFullTable .cONE{
+    width: 30vw
+}
+#classFullTable .cTWO{
+    width: 80%;
+}
+.userlogTable thead tr .cONE{
+    width: 99vw;
+}
+.userlogTable thead tr .cTWO{
+    width: 23%;
+}
+
+.StudentTable thead tr th{
+    background-color: black;
+}
+
+.announcementsTable{
+    min-height: 75vh;
+}
+
+.StudentTable .cONE{
+    width: 23vw
+}
+.StudentTable .cTWO{
+    width: 60%;
+}
+.StudentTable .cTHREE{
+    width: 18.5vw
+}
+
+.modal-body{
+    max-height: 65vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.modal-body .cONE{
+    width: 25vw;
+}
+.modal-body .cTWO{
+    width: 40%;
+} 
+.modal-body .cTHREE{
+    width: 20%;
+} 
+.modal-body .cFOUR{
+    width: 25%;
+}
+
+.Studentmodal-body .cONE{
+    width: 20vw;
+}
+.Studentmodal-body .cTWO{
+    width: 45%;
+} 
+.Studentmodal-body .cTHREE{
+    width: 30%;
+}
+
+.sortANDbutton{
+    height: 10%;
+    margin: 0 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content:flex-start;
+}
+
+.filterDept{
+    font-size: 1.3rem;
+    height: 70%;
+    width: 40%;
+}
+
+.btnImportAcc{
+    margin-left: 1.2em;
+    padding: 0 0.3em;
+    height: 70%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: green;
+    justify-content:space-between;
+}
+
+.btnImportAcc img{
+    max-height: 90%;
+}
+
+.btnImportAcc p{
+    text-align: start;
+    color: whitesmoke;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.rejected{
+    background-color: #ff6363!important;
+}
+
+.btn-primary{
+    background-color: forestgreen;
+}
+
+.File{
+    margin: 0 1%;
+    background-color: gainsboro;
+    border: 0.5px solid dimgray;
+    border-left: none;
+}
+
+/*$!@$!@$@$ SUBJECTS $!@$@!$@!*/
+
+
+.subSortContainer{
+    width:auto;
+    height: 7.8vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.subSortContainer select{
+    align-self: center;
+    margin: 1%;
+    font-size: 1.1em;
+    padding: 0.2em 0.3em;
+    min-width: 30%;
+    width: auto;
+}
+
+.subSortContainer button{
+    align-self: center;
+    margin: 1%;
+    background-color: green;
+    border-radius: 3px;
+    margin-right: 2.5%;
+}
+.subSortContainer button p{
+    margin: 0;
+    font-size: 1em;
+    padding: 0.15em;
+    color: whitesmoke;
+    
+}
+
+
+.subjectsContainer{
+    border: 2px solid black;
+    margin: 0 1% 2% 1%;
+    height: 76.8vh;
+/*    background-color: brown;*/
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+
+.subjCard{
+    padding: 1.4em;
+    background-color: darkgreen;
+    color: white;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-column-gap: 1em;
+    border-radius: 3px;
+    margin: 0.5em 0.2em 0.5em 0.2em;
+}
+
+.subjCard:hover{
+    background-color: green;
+    cursor: pointer;
+}
+
+
+.subCode{
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: left;
+}
+.subDesc{
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+}
+.subDept{
+    font-size: 1.6rem;
+    margin: 0;
+    text-align: center;
+}
+
+.courseFilter{
+    display: none;
+}
+
+.subModContainer{
+    min-height: 50vh;
+    height: auto;
+    overflow-y: auto;
+    
+    display: grid;
+    grid-row-gap: 0.2em;
+    grid-column-gap: 0.2em;
+	grid-template-columns: auto;
+}
+
+.subModCard{
+    height: 10vh;
+    background-color: green;
+}
+
+
+/*PROFILEEEE======*/
+
+.modProfile{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 20% 60%;
+    grid-column-gap: 0.3em;
+    grid-row-gap: 0.3em;
+    
+}
+
+.modProfile p{
+    margin: 0;
+    padding: 1em;
+    font-size: 1.7rem;
+    text-align: center;
+}
+    
+.modProfile .col1{
+    background-color: dimgray;
+    color: white;
+}
+
+.modProfile .col2{
+    color: white;
+    background-color: green;
+}
+
+.modPassChange{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 20% 60%;
+    grid-column-gap: 0.3em;
+    grid-row-gap: 0.3em;
+}
+
+.modPassChange label{
+    text-align: left;
+    padding: 0.5em 1em;
+    background-color: green;
+    color: whitesmoke;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.modPassChange input{
+    padding: 0.5em 1em;
+    background-color: darkgray;
+    margin: 0;
+    font-size: 1.5rem;
+}
+.btnUpdatePass{
+    font-size: 1.5rem;
+    padding: 0.3em 2em;
+}
+
+#goBackMod{
+    display: none;
+}
+
+
+
+/*ANNOUNCEMENT MODAL========================*/
+.body-announcement{
+    height: 60vh;
+    display: grid;
+    grid-column-gap: 0.3em;
+    grid-row-gap: 0.3em; 
+}
+
+.announceTitle{
+    grid-row: 1/1;
+    grid-column: 1/4;
+    padding: 0em 0.3em;
+}
+
+.announceDept{
+    font-size: 1.4rem;
+    color: white;
+    background-color: green;
+    grid-row: 1/1;
+    grid-column: 4/6;
+    padding: 0em 0.3em;
+}
+
+.announceContent{
+    padding: 0.5em 0.5em;
+    grid-row: 2/18;
+    grid-column: 1/6;
+    resize: none;
+}
+
+.labelNotifyDate{
+    font-size: 1.5rem;
+    grid-column: 1/3;
+    margin: 0;
+    background-color: green;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reminderTitle{
+    grid-column: 3/6;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.titleAdmin{
+    max-width: 50%!important;
+}
+
+#sectionsModalSubject{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 35% 35%;
+    grid-template-rows: 6vh 6vh 6vh 6vh;
+    grid-row-gap: 1em;
+    grid-column-gap: 0.3em;
+}
+
+#sectionsModalSubject label{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.6rem;
+    background-color: green;
+    color: whitesmoke;
+    padding: 0em 0.7em;
+    opacity: 0.7;
+}
+
+.active{
+    opacity: 1!important;
+}
+
+#sectionsModalSubject input{
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+#importblockModalSubject{
+    display: none;
+}
+
+.subjectStudents{
+    display: none;
+}
+
+
+
+.sectionViewModal{
+    min-height: 30vh;
+    height: auto;
+}
+
+.classviewnorecord{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 4rem;
+    color: indianred;
+    width: 100%;
+    height: 30vh;
+}
+
+.classViewModal{
+    width: 100%;
+}
+
+.sectionsView{
+    height: 45vh;
+}
+
+.toClassCard{
+    margin-bottom: 0.3em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+    color: white;
+    font-size: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0em 1em;
+    height: 7vh;
+}
+
+.toClassCard:hover{
+    cursor: pointer;
+    background-color: darkgreen;
+}
+
+.imgNcount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgNcount img{
+    max-height: 10vh;
+    padding: 0.3em 0em;
+}
+
+.professorNcount{
+    display: flex;
+    background-color: green;
+    height: 6vh;
+    padding: 0 0.9em;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    color: white;
+    border-radius: 5px;
+}
+
+.professorNcount p{
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.professorNcount img{
+    max-height: 5.5vh;
+}
+
+.imgCount{
+    display: flex;
+    flex-direction: row;
+}
+
+#tableBodyclassFull{
+    overflow-x: auto;
+    max-height: 45vh;
+}
+
+.trTable{
+    position: relative;
+}
+
+.trRow:hover{
+    background-color: darkseagreen;
+}
+
+.trRow:hover  .delicon,.trRow:hover  .editicon{
+    display: inline-block;
+}
+
+
+.delicon{
+    display: none;
+    max-height: 2.8vh;
+    position:absolute;
+    right: 0;
+}
+
+.delicon:hover{
+    content: url(Icons/deleteiconS.png);
+    border-radius: 5px;
+    background-color: darkslategray;
+}
+
+.editicon{
+    padding: 0.2em;
+    display: none;
+    max-height: 2.8vh;
+    position:absolute;
+    right: 1.6em;
+}
+
+.editicon:hover{
+    content: url(Icons/editbuttonS.png);
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+.modProfile input{
+    text-align: center;
+    font-size: 2rem!important;
+}
+
+.no{
+    padding: 0.5em 0em;
+    background: url(Icons/editableicon.png) no-repeat scroll;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:right;
+}
+
+
+.anncHov:hover{
+    cursor: pointer;
+    background-color: darkseagreen;
+}
+
+.tblDashboard{
+    display: none!important;
+}
+
+.closebtn{
+    max-height: 2.7vh;
+}
+
+.backbtn{
+    max-height: 4.3vh;
+}
+
+.btnModCloseSubj{
+    padding: 0.3em;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0.5em .5em;
+    
+}
+
+.btnModCloseSubj:hover .closebtn{
+    content: url(Icons/closeBtnS.png);
+}
+
+.modal-header{
+    position: relative;
+}
+
+.btnModBack{
+    padding: 0.3em;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0.5em .5em;
+}
+
+.btnModBack:hover .backbtn{
+    content: url(Icons/backBtnS.png);
+}
+
+.delButt{
+    background-color: #bf160a;
+    font-size: 1.5rem;
+    padding: 0.3em 2em;
+}
+
+.delButt:hover{
+    background-color: darkred;
+}
+
+.btnUpdatePass:hover{
+    background-color: darkgreen;
+}
+
+.remindermods:hover{
+    background-color: darkseagreen;
+    cursor: pointer;
+}
+
+.hideforNow{
+    display: none;
+}
+
+.toclickPopReminder:hover{
+    cursor: pointer;
+    background-color: darkgreen;
+}
+
+.userlogdesc{
+    text-align: left!important;
+    padding: 0em 2em;
+}
+
+.addStudButton{
+    position: relative;
+}
+
+.btnImportAcc2{
+    position: absolute;
+    top:40%;
+    right: 0;
+    margin-right: 1em;
+    padding: 0 0.3em;
+    height: 40%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: green;
+    justify-content:space-between;
+}
+
+.btnImportAcc2 img{
+    max-height: 90%;
+}
+
+.btnImportAcc2 p{
+    text-align: start;
+    color: whitesmoke;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.addStudents{
+    display: block!important;
+}
+
+.no-data{
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 92%;
+    position: absolute;
+    color: indianred;
+    font-size: 4rem;
+}
+
+.no-dataposts{
+    height: 72vh;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 92%;
+    position: absolute;
+    color: indianred;
+    font-size: 4rem;
+    border: none;
+}
+
+.cSYSEMdiv{
+    margin-bottom: 1em;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 50% 50% ;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: 1px black solid;
+}
+.View{
+    width: 80%;
+    padding-top: 1em;
+    margin-bottom: 0;
+    height: 13vh;
+}
+
+.View label{
+    margin: 0;
+}
+
+.labelSet{
+    color: green;
+    font-size: 3rem;
+    margin: 0;
+    margin-top: 1em;
+}
+
+.notifBtn{
+    display: none;
+}
+
+.commenttd{
+    position: relative;
+}
+
+.comments{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: 90%;
+    text-align: center;
+    color: whitesmoke;
+    padding: 0rem 0.25em;
+    border-radius: 50%;
+    background-color: green;
+    position: absolute;
+    margin: 0;
+    right: 2%;
+    top:2px;
+    font-size: 2rem;
+}
+
+.delButt{
+    border-color: red;
+}
+
+.viewcommentsBtn{
+    position: absolute;
+    top: 35%;
+    padding: 0.5em;
+    background-color: green!important;
+    border-color: green!important;
+}
+
+.viewcommentsBtn:hover{
+    background-color: darkgreen!important;
+    border-color: darkgreen!important;
+}
+
+.commentInput{
+    padding: 0.5em 0.5em;
+    grid-row: 1/5;
+    grid-column: 1/10;
+    resize: none;
+    height: 12vh;
+}
+
+.btnPostComment{
+    height: 4vh;
+    grid-row: 5/6;
+    grid-column: 5/5;
+    padding: 0em 0.3em;
+}
+
+#inputCommentContainer{
+    
+    display: grid;
+    grid-row-gap: 1em;;
+}
+
+.CommentContainer{
+    height: 50vh;
+    overflow-y:auto;
+}
+
+.CommentCard{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.2em;
+    color: whitesmoke;
+    background-color: forestgreen;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+.CommentCard:hover{
+    background-color: darkgreen;
+    
+}
+
+.timepassedComm{
+    position: absolute;
+    width: auto;
+    right: 5px;
+    top: 2px;
+    margin: 0;
+}
+
+.dateComm{
+    color: dimgray;
+    position: absolute;
+    right: 5px;
+    bottom: -20px;
+    margin: 0;
+}
+
+.commentContent{
+    padding: 0.5em;
+    margin:0;
+    border: white 1px solid;
+}
+
+.commentUser{
+    font-size: 1.5rem;
+    padding-left: 0.1em;
+}
+
+.NoDATA{
+    display: grid;
+    place-items:center;
+    font-size: 2rem;
+    color: indianred;
+    border: 1px red solid;
+}
+
+.CommentCard:hover .deleteComment{
+    display: block;
+    
+    cursor: pointer;
+    
+}
+
+.CommentCard:hover .timepassedComm{
+    display: none;
+    
+}
+
+.deleteComment{
+    margin: 0.2em;
+    display: none;
+    padding: 0.1em;
+    max-height: 2em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.deleteComment:hover{
+    background-color: green;
+    content: url(Icons/deleteiconS.png);
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <title>HomeLearning Buddy - Announcements</title>
+  </head>
+    
+  <body onload="getDataAnnouncements()">
+      <div class="nav">
+            <img class="appIcon"src="Icons/UPangLogos/CITE.png">
+            <btn onclick="goTo('dashboardTeacher.html')"><img src="Icons/dashboard.png">Dashboard</btn>
+            
+            <btn  onclick="goTo('subjectsTeacher.html')"><img src="Icons/subject.png">Subjects</btn>
+            
+            <btn class="selected"><img src="Icons/postanncsS.png">Announcements</btn>
+            
+            <btn onclick="goTo('remindersTeacher.html')"><img src="Icons/remind2.png">Reminders</btn>
+        </div>
+      
+      <div class="container">
+          <div class="dashboardHead">
+              <div class="notifANDaccount">
+                  <div class="dropDown">
+                    <p id="profileName">Account</p>
+                    <img src="Icons/accountSets.png">
+                    <div class="dropdown-content">
+                        <a href="#" data-toggle="modal" data-target="#AccountModal" onclick="getTBeditStaff()">Profile</a>
+                        <a onclick="openPassChange()" href="#" data-toggle="modal" data-target="#ChangePassModal">Change Password</a>
+                        <a href="#" onclick="Logout()">Logout</a>
+                    </div>
+                  </div>
+                  
+                  <div class="notifBtn">
+                    <img src="Icons/Notif.png">
+                    <span class="badge">3</span>
+                  </div>
+              </div>
+              <h1>Announcements</h1>
+          </div>
+          <div class="subSortContainer">
+                <select id="deptAnnouncement" onchange="getDataAnnouncements()">
+                    <option value="CITE" selected>College of Information Technology Education</option>
+              </select>
+              <button data-toggle="modal" data-target="#addPostModal" onclick="importClearAnnouncement()">
+                  <p>Create Announcement</p>
+              </button>
+          </div>
+          <div class ="subjectsContainer no-dataposts" id="checkifEmpty">NO ANNOUNCEMENTS<br>TO BE DISPLAYED</div>
+          <table class="StudentTable announcementsTable">
+                    <thead>
+                        <tr>
+                            <th class="cONE">Department</th>
+                            <th class="cTWO">Title</th>
+                            <th class="cTHREE">Date Posted</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="viewAnnouncements">
+                        <tr>
+                            <td>00-0000-00000</td>
+                            <td>Marc Santos</td>
+                            <td>Admin</td>
+                        </tr>
+                    </tbody>
+            </table>
+          
+      </div>
+      
+      <!--                MODAL-->
+      <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal fade" id="addUserModal">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <center><h3>Subjects</h3></center>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="subModContainer">
+                                        <div class="subModCard">
+                                        </div>
+                                        <div class="subModCard">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="secModContainer">
+                                        <div class="subModCard">
+                                        </div>
+                                        <div class="subModCard">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="classModContainer">
+                                        <div class="subModCard">
+                                        </div>
+                                        <div class="subModCard">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <center>
+                                        <button type="button" class="btn-secondary btnModCloseSubj" data-dismiss="modal" id="closeModal"><img class="closebtn" src="Icons/closeBtn.png"></button>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+                            
+    <!--                MODAL               -->
+      
+      
+      
+    <!--                ACCOUNT SETTS MODAL-->
+      <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal fade" id="AccountModal">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <center><h3 id="profModhead">User Profile</h3></center>
+                                </div>
+                                <div class="modal-body">
+<!--
+                                    <div class="modProfile" id="modProfile">
+                                        
+                                        <p class="col1">User ID</p><p id="profileID" class="col2">Marc Santos Llarenasasdasd</p>
+                                        
+                                        <p class="col1">Full Name</p><p id="FullName" class="col2">asdasdas</p>
+                                        
+                                        
+                                        <p class="col1">Email</p><p id="profileEmail"  class="col2">Sample Email</p>
+                                        <p class="col1">Department</p><p id="profileDepartment"  class="col2">CITE</p>
+                                        <p class="col1">Position</p><p id="profilePosition"  class="col2">Admin</p>
+                                        
+                                    </div>
+-->
+                                    
+                                    <div class="modProfile" id="modProfile">
+                                        
+                                        <p class="col1">User ID</p><input id="profileID" class="col2" disabled="true">
+                                        <p class="col1">First Name</p><input id="profilefName" class="col2 no" oninput="changedtbEditStaff()">
+                                        <p class="col1">Middle Name</p><input id="profilemName" oninput="changedtbEditStaff()" class="col2 no">
+                                        <p class="col1">Last Name</p><input id="profilelName" oninput="changedtbEditStaff()" class="col2 no">
+                                        <p class="col1">Email</p><input id="profileEmail" oninput="changedtbEditStaff()" class="col2 no">
+<!--                                        <p class="col1">Contact Number</p><input id="editprofNumber" class="col2 no" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); changedtbEdit();"type = "number"maxlength = "10">-->
+                                        <p class="col1">Department</p><input id="profileDepartment" class="col2" disabled="true">
+                                        <p class="col1">Position</p><input id="profilePosition" class="col2" disabled="true">
+                                    </div>
+                                </div>
+                                
+                                <div class="modal-footer">
+                                    <center>
+                                        <button type="button" class="btn-primary btnUpdatePass" id="updateStaffProfileBtn" onclick="updateTBeditStaff()">Update</button>
+                                        
+                                        <button type="button" class="btn-secondary btnModCloseSubj" data-dismiss="modal" id="closeModal"><img class="closebtn" src="Icons/closeBtn.png"></button>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+      
+      
+      
+      <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal fade" id="ChangePassModal">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <center><h3 id="profModhead">Change Password</h3></center>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="modPassChange" class="modPassChange">
+                                        <label>Old Password</label>
+                                        <input type = "password" placeholder= "****************" id="OldPass">
+                                        
+                                        <label>New Password</label>
+                                        <input type = "password" placeholder= "****************" id="NewPass">
+                                        
+                                        <label>Confirm Password</label>
+                                        <input type = "password" placeholder= "****************" id="ConfirmPass">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <center>
+                                        <button type="button" class="btn-primary btnUpdatePass" id="btnUpdatePass" onclick="updatePass()">Update</button>
+                                        
+                                        <button type="button" class="btn-secondary btnModCloseSubj" data-dismiss="modal" id="closeModal"><img class="closebtn" src="Icons/closeBtn.png"></button>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+      
+      
+      <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal fade" id="SettingModal">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <center><h3 id="profModhead">School Year & Semester</h3></center>
+                                </div>
+                                <div class="modal-body">
+                                    <center><p  class="labelSet">Current School Year & Semester:</p></center>
+                                    <center><div class="cSYSEMdiv">
+                                        <label>School Year:</label>
+                                        <select id="cSY" onchange="hidedisplayUpdateSYSEM()">
+                                        </select>
+                                        <label>Semester:</label>
+                                        <select id="cSEM" onchange="hidedisplayUpdateSYSEM()">
+                                            <option value="1st">1st</option>
+                                            <option value="2nd">2nd</option>
+                                            <option value="Summer">Summer</option>
+                                        </select>
+                                        </div></center>
+                                    
+                                    
+                                    <center><p  class="labelSet">View School Year & Semester:</p></center>
+                                    <center><div class="cSYSEMdiv View">
+                                        <label>School Year & Semester:</label>
+                                        <select id="vSY" onchange="hidedisplayUpdateSYSEM()">
+                                        </select>
+                                    
+                                        </div></center>
+                                </div>
+                                <div class="modal-footer">
+                                    <center>
+                                        <button type="button" class="btn-primary btnUpdatePass" onclick="putCurrentSY()" id="updateSYSEM">Update</button>
+                                        
+                                        <button type="button" class="btn-secondary btnModCloseSubj" data-dismiss="modal" id="closeModal"><img class="closebtn" src="Icons/closeBtn.png"></button>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+                            
+    <!--                MODAL               -->
+      
+      <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="modal fade" id="addPostModal">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <center><h3>CREATE ANNOUNCEMENT</h3></center>
+                                        </div>
+                                        <div class="modal-body body-announcement">
+                                            
+                                            <input type = "text" placeholder= "Write Title..." id= "title-announcement" class="announceTitle">
+                                            <select class = "announceDept" id="department-announcement">
+                                                <option value="" disabled selected style="color" >Select Block</option>
+                                                    <option value="ALL">University-Wide</option>
+                                                    <option value="CAS">CAS</option>
+                                                    <option value="CEA">CEA</option>
+                                                    <option value="CHS">CHS</option>
+                                                    <option value="CITE">CITE</option>
+                                                    <option value="CMA">CMA</option>
+                                                    <option value="CSS">CSS</option>
+                                            </select>
+                                            <textarea type = "text" placeholder= "Write Information..." id= "content-announcement" class="announceContent"></textarea>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <center>
+                                                <button class="btn-primary btnUpdatePass" id="btnAddPost" onclick="writeData()">Post</button>
+                                                
+                                                 <button type="button" class="btn-secondary btnModCloseSubj" data-dismiss="modal" id="closeModal"><img class="closebtn" src="Icons/closeBtn.png"></button>
+                                            </center>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      
+      
+      <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="modal fade" id="editPostModal">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-primary viewcommentsBtn" id="openComment" data-toggle="modal" data-target="#CommentsModal">Comments (10)</button>
+                                            <center><h3>VIEW ANNOUNCEMENT</h3></center>
+                                        </div>
+                                        <div class="modal-body body-announcement">
+                                            
+                                            <input type = "text" placeholder= "Write Title..." id= "tbtitle-announcement" class="announceTitle" oninput="editAnnounceInput()">
+                                            <select class = "announceDept" id="tbdepartment-announcement">
+                                                <option value="" disabled selected style="color" >Select Department</option>
+                                                    <option value="ALL">University-Wide</option>
+                                                    <option value="CAS">CAS</option>
+                                                    <option value="CEA">CEA</option>
+                                                    <option value="CHS">CHS</option>
+                                                    <option value="CITE">CITE</option>
+                                                    <option value="CMA">CMA</option>
+                                                    <option value="CSS">CSS</option>
+                                            </select>
+                                            <textarea type = "text" placeholder= "Write Information..." id= "tbcontent-announcement" class="announceContent" oninput="editAnnounceInput()"></textarea>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <center>
+                                                <button class="btn-primary btnUpdatePass" id="btnEditPost">Update</button>
+                                                
+                                                <button class="btn-primary delButt" id="btnDelPost">Delete</button>
+                                                
+                                                 <button type="button" class="btn-secondary btnModCloseSubj" data-dismiss="modal" id="closeModal"><img class="closebtn" src="Icons/closeBtn.png"></button>
+                                            </center>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+      </div>
+      
+      <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal fade" id="CommentsModal">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <center><h3>Comments</h3></center>
+                                    <button type="button" class="btn-secondary btnModCloseSubj" data-dismiss="modal" id="closeModal"><img class="closebtn" src="Icons/closeBtn.png"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="CommentContainer" class="CommentContainer">
+                                        <div id="CommentCard" class="CommentCard" >
+                                            <img src="Icons/deleteicon.png" class="deleteComment">
+                                            <p id="commentUser" class="commentUser">Marc Llarenas (03-0000-00000)</p>
+                                            <p id="commentContent" class="commentContent" ></p>
+                                            <p id="timepassedComm" class="timepassedComm">15s</p>
+                                            <p id="dateComm" class="dateComm">23/23/2000</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div id="CommentContainerNoDATA" class="CommentContainer NoDATA">
+                                        THERE ARE NO COMMENTS FOR THIS ANNOUNCEMENT
+                                    </div>
+                                </div>
+                                
+                                <div class="modal-footer">
+                                    <div id="inputCommentContainer">
+                                        <textarea oninput="disableCommentBtn()" id="contentComment" type = "text" placeholder= "Write Comment..." class="announceTitle commentInput"></textarea>
+                                        <button id="postComment" type="button" class="btn-primary btnPostComment">Post Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+  </body>
+<script type="text/javascript" src="scripts.js"></script>
+<script type="text/javascript" src="papaparse.min.js"></script>
+<script type="text/javascript" src="displayProfile.js"></script>     
+
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyAVmPsdqjfKErtcZQBl2swqLtAP34yjhQU",
+    authDomain: "homelearning-buddy.firebaseapp.com",
+    projectId: "homelearning-buddy",
+    storageBucket: "homelearning-buddy.appspot.com",
+    messagingSenderId: "936152024263",
+    appId: "1:936152024263:web:3aa301f6fb798f36426ae2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    
+</html>

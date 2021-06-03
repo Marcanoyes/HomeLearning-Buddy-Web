@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>HomeLearning - Login</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+    <link rel="stylesheet" href="styles.css">
+</head>
+    
+    
+    
+<body class="bodyLogin">
+    <center><div class="center">
+        <div class="loginCardImg">
+            <image class="imgLogin" src="Icons/iconWhite.png"></image>
+            <h1 class="loginAppName">HomeLearning<br>Buddy</h1>
+        </div>
+    
+        <div class="loginCard">
+            <h1 class="topText">User Login</h1>
+            <label class="loginTxtLabel">User ID</label>
+            <input class="loginTxtInput" type = "text" placeholder= "ex: UP-00-000-F" id= "userName">
+            <label class="loginTxtLabel">Password</label>
+            <input class="loginTxtInput" type = "password" placeholder= "****************" id= "passWord">
+            <button class="btnLogin" onclick="Login()">Login</button>
+        </div>
+        
+    </div></center>
+</body>
+
+<script type="text/javascript" src="scripts.js"></script>  
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyAVmPsdqjfKErtcZQBl2swqLtAP34yjhQU",
+    authDomain: "homelearning-buddy.firebaseapp.com",
+    projectId: "homelearning-buddy",
+    storageBucket: "homelearning-buddy.appspot.com",
+    messagingSenderId: "936152024263",
+    appId: "1:936152024263:web:3aa301f6fb798f36426ae2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    
+
+
+    
+</html>
